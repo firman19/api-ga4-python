@@ -19,13 +19,13 @@ def sample_run_report(property_id="YOUR-GA4-PROPERTY-ID"):
 
     request = RunReportRequest(
         property=f"properties/{property_id}",
-        dimensions=[Dimension(name="pagepath")],
+        dimensions=[Dimension(name="hostname")],
         dimension_filter=FilterExpression(
             filter=Filter(
-                field_name="pagepath",
+                field_name="hostname",
                 string_filter=Filter.StringFilter(
                     match_type= Filter.StringFilter.MatchType(Filter.StringFilter.MatchType.FULL_REGEXP) ,
-                    value='/dashboard'
+                    value='konekios.com'
                 ),
             )
         ),
